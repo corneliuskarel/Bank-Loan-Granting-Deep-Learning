@@ -5,7 +5,7 @@ Dataset Link = [BankLoanGrantingDataset](https://www.kaggle.com/datasets/corneli
 ## Objective
 <p align="justify">Create a deep learning model that can forecast loan acceptance and boost the interpretability of the model for the main determinants of loan choices, and to achieve high prediction accuracy by optimizing the model's performance.</p>
 
-## Business Problems
+## Business Opportunities
 <p align="justify">Rapid and precise loan eligibility determination is essential in the banking sector. Because manual evaluations can be laborious and inconsistent, an automated model is useful for processing loans quickly. With the use of deep learning, this initiative seeks to forecast loan approval outcomes, giving banks a tool to expedite decision-making and lower risk.</p>
 
 ## Methodologies 
@@ -51,6 +51,7 @@ x_train = pd.DataFrame(scaler.fit_transform(x_train), columns = cols)
 x_train.head()
 ```
 #### baseline model & result
+![base architecture](imgs/base_mod_1.png)
 ```
 #creating a base line model which contains (n, 2*n, 2*n, num_class)
 def create_baseline_model(n, num_class):
@@ -68,8 +69,11 @@ num_class = 2
 baseline_model = create_baseline_model(n, num_class)
 baseline_model.summary()
 ```
+Result <p></p>
+![base architecture](imgs/base_mod_res_1.png)
 
 #### modified model & result
+![modded architecture](imgs/mod_mod_1.png)
 ```
 #creating a modified model 
 def modified_model(n, num_class):
@@ -95,6 +99,9 @@ num_class = 2
 m_model = modified_model(n, num_class)
 m_model.summary()
 ```
+Result<p></p>
+![modded architecture](imgs/mod_mod_res_1.png)
 
-
+## Conclusion
+<p align="justify">Overall, the modified model performs slightly below the baseline_model in all aspects, this means that our modified model, one of the possibilities could be due to overfitting, since the modified model were added more layers/neurons, our modified model could be fitting too closely to the training set, making it bad to predict the test set.</p>
 
